@@ -1,0 +1,12 @@
+./bin/Main: ./obj/Main.o ./obj/Strings.o
+	gcc -o ./bin/Main ./obj/Main.o ./obj/Strings.o
+	
+./obj/Main.o: ./src/Main.c
+	gcc -c ./src/Main.c -o ./obj/Main.o
+	
+./obj/Strings.o: ./src/Strings.c
+	gcc -c ./src/Strings.c -o ./obj/Strings.o
+	
+.PHONY: clean
+clean:
+		rm -f ./bin/Main ./obj/*.o
